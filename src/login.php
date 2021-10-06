@@ -25,7 +25,8 @@
        exit();
    }else{
        $_SESSION['nao_autenticado'] = true;
-       header('Location: ./index.php');
+       echo"<script language='javascript' type='text/javascript'>
+               alert('Usuário e/ou senha incorreto(s)!');window.location.href='../index.php'</script>";
        exit();
    }
 ?>

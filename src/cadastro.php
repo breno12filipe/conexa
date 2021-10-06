@@ -22,12 +22,12 @@
     // validações
     if($login == "" || $login == null){
         echo"<script language='javascript' type='text/javascript'>
-        alert('O campo login deve ser preenchido');window.location.href='../pages/createAccount.html';</script>";
+        alert('O campo login deve ser preenchido');window.location.href='../pages/createAccount.php';</script>";
     
     }else{
         if($logarray == $login){
             echo"<script language='javascript' type='text/javascript'>
-            alert('Esse login já existe');window.location.href='../pages/createAccount.html';</script>";
+            alert('Esse login já existe');window.location.href='../pages/createAccount.php';</script>";
             die();
         }else{
             $query = "INSERT INTO login (UserEmail,UserPassword) VALUES ('$login','$senha')";
@@ -35,10 +35,10 @@
 
             if($insert){
                 echo"<script language='javascript' type='text/javascript'>
-                alert('Usuário cadastrado com sucesso!');window.location.href='../index.html'</script>";
+                alert('Usuário cadastrado com sucesso!');window.location.href='../index.php'</script>";
             }else{
                 echo"<script language='javascript' type='text/javascript'>
-                alert('Não foi possível cadastrar esse usuário');window.location.href='../pages/createAccount.html'</script>";
+                alert('Não foi possível cadastrar esse usuário');window.location.href='../pages/createAccount.php'</script>";
             }
         }
     }

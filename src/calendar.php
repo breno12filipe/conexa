@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('verifica_login.php');
-    include('navBar.php');
+    //include('navBar.php');
     // bug: Por algum motivo não estamos conseguindo sair na tela de calendário
 ?>
 
@@ -14,6 +14,7 @@
 <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
 <script src='../public/third/fullcalendar/lib/main.js'></script>
 <!-- <script src='../packages/icalendar/main.global.js'></script> -->
+<title>Agenda - Conexa</title>
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {

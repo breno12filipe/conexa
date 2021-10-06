@@ -14,12 +14,11 @@
     <link rel="stylesheet" href="../public/third/bootstrap-4.1.3/css/bootstrap.css">
     <script src="../public/third/bootstrap-4.1.3/js/bootstrap.js"></script>
     <script src="../public/third/jquery/jquery-3.6.0.js"></script>
-    <title>Dashboard</title>
+    <title>Dashboard - Conexa</title>
 </head>
 <body>
-    <center>
-        <img src="../public/our/img/man-at-work.jpeg" width="300px" height="300px">
-    </center>
 
+    
+    
 </body>
 </html>

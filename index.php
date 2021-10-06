@@ -6,47 +6,88 @@
     }
 ?>
 
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Login - Conexa</title>
-    <link rel="stylesheet" href="./public/third/bootstrap-4.1.3/css/bootstrap.css">
-    <script src="./public/third/bootstrap-4.1.3/js/bootstrap.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  </head>
-  
-  <body>
-    <div class="jumbotron bg-info h-10 p-3">
-      <h3 style="text-align: center;">CONEXA</h3>
-    </div>
 
-    <h3 style="margin-left: 30px;">Login</h3>
+    <!-- Custom fonts for this template-->
+    <link href="./public/third/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <form method="POST" action="./src/login.php">
-      <div class="card align-middle" style="margin-left:30px;margin-right:30px;">  
-        <div class="container" style="margin-top:30px; margin-bottom:20px;">
+    <!-- Custom styles for this template-->
+    <link href="./public/third/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
-          <div class="form-group">
-            <label class="font-weight-bold">Email:</label>
-            <input type="email" class="form-control" name="email-login" id="email-login" required>
-          </div>
-      
-          <div class="form-group">
-            <label class="font-weight-bold">Senha:</label>
-            <input type="password" class="form-control" name="password-login" id="password-login" required>
-          </div> 
-            
-          <div class="text-center">
-            <button type="reset" class="btn btn-warning btn-lg">Limpar</button>
-            <button type="submit" name="submit-login" id="submit-login" class="btn btn-success btn-lg">Login</button>
-          </div>
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">CONEXA</h1>
+                                    </div>
+                                    <form class="user" method="POST" action="./src/login.php">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                   id="email-login" name="email-login" aria-describedby="emailHelp" 
+                                                   placeholder="Digite seu email..." required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                   id="password-login" name="password-login" placeholder="Senha" required>
+                                        </div>
+                                        <div class="form-group">
+                                        </div>
+                                        <button type="submit" name="submit-login" id="submit-login" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <hr>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="./src/createAccount.php">Crie uma conta!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-      </div>
-    </form>
 
-    <div class="d-flex justify-content-end" style="margin-right: 30px;">
-      <a href="./src/createAccount.php">Não tem conta? Cadastre-se</a>
     </div>
-    
-  </body>
+ 
+    <!-- Bootstrap core JavaScript-->
+    <script src="./public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="./public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="./public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="./public/third/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+</body>
+
 </html>
