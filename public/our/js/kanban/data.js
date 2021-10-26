@@ -28,11 +28,15 @@ function getAllTasks(){
 
     var taskList;
     $.ajax({
-        url: "listTasks.php",
-        method: "get",
+        url: '../controller/routes.php',
+        method: 'POST',
+        contentType: 'application/json',
         async: false,
-        success: function (tasks){
-            taskList = tasks;
+        data: JSON.stringify({
+            operation: 'listAllTasks'
+        }),
+        success: function(tasks){
+            taskList = tasks
         }
     })
     
@@ -48,7 +52,7 @@ function getAllTasks(){
 
         })
 
-    }
+    }   
 
     return JSON.parse(taskList);
     
@@ -62,6 +66,7 @@ function getAllUsers(){
         async: false,
         success: function(users){
             usersList = JSON.parse(users)
+            console.log(usersList)
         }
     })
 
@@ -74,7 +79,6 @@ function getAllUsers(){
             validatedUsers['ID'] = userItem['ID']
             validatedUsers['Name'] = userItem['UserEmail']
         })
-        console.log(validatedUsers)
         return validatedUsers;
     }
 }

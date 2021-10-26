@@ -18,6 +18,10 @@
     <!-- Custom styles for this template-->
     <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet' />
+    <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
+    <script src='../public/third/fullcalendar/lib/main.js'></script>
+
 </head>
 
 <body id="page-top">

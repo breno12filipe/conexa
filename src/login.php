@@ -1,8 +1,6 @@
 <?php
    session_start();
    include('conexao.php');
-
-   // todo: fazer validação quando usuário e senhas estão errados
    
    // Verifica se o usuário mandou um usuário ou senha via post
    if (empty($_POST['email-login'] || empty($_POST['password-login']))) {

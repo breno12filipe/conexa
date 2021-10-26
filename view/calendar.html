@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    include('verifica_login.php');
-    //include('navBar.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +21,6 @@
     <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet' />
 
     <link  href='../public/our/css/calendar.css' rel='stylesheet' >
-    <link rel="stylesheet" href="../public/third/jquery-ui-1.12.1.custom/jquery-ui.css">
-    
     <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
     <script src='../public/third/fullcalendar/lib/main.js'></script>
     <script src='../public/our/js/calendar.js'></script>
@@ -58,7 +49,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" id="navbar-dashboard-icon">
+            <li class="nav-item active" id="navbar-dashboard-icon">
                 <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
@@ -76,7 +67,7 @@
 
             
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" id="navbar-agenda-icon">
+            <li class="nav-item" id="navbar-agenda-icon">
                 <a class="nav-link" href="calendar.php">
                     <i class="fas fa-fw fa-calendar-week"></i>
                     <span>Agenda</span>
@@ -178,36 +169,16 @@
 
                 <!-- Begin Page Content -->
 
-                <!-- Main content-->
-                
-                
                 <div id='script-warning'>
                     <code>ics/feed.ics</code> must be servable
                 </div>
 
-                <div id='loading'>loading...</div> 
+                <div id='loading'>loading...</div>
 
+                <div id='calendar'></div>
                 
-                <div class="row">
-                    <div class="col-md-2">
-                        <a style="cursor: pointer;font-size:1rem;" onclick="loadAppontmentModal()" data-toggle="modal" data-target="#add-appointment" class="nav-link ">
-                            <i class="fas fa-plus"></i>
-                            Adicionar Compromisso
-                        </a>
-                    </div>
-
-                    <div class="col md-2">
-                        <div style="margin-top: 0px; margin-left:20px" id='calendar'></div>
-                    </div>
-                    <div class="modal fade" id="add-appointment">
-                        <div class="modal-dialog">
-                            <div class="modal-content" id="add-appointment-content"></div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Main content-->
                 
-
-
 
             </div>
             <!-- End of Main Content -->
@@ -247,7 +218,6 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
-    <script src="../public/third/jquery-ui-1.12.1.custom/jquery-ui.js" ></script>
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -255,8 +225,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
-    <script src="../public/our/js/addAppointment.js" ></script>
-
 
     <!-- Page level plugins -->
     <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
