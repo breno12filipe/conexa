@@ -1,2 +1,3 @@
 # conexa
-Software para gestão de agências de publicidades
+Software para gestão de agências de publicidade
+
