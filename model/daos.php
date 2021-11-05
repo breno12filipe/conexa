@@ -29,7 +29,7 @@ class DAO extends DataBase{
     public function insert($tableName, $fields, $values){
         $values = $this->adjustArraySQLSyntax($values);
         $fields = $this->adjustArraySQLSyntax($fields, true);
-        $tableCols = $this->getTableColumns($tableName);
+        $tableCols = $this->getTableColumns($tableName, true);
         $insertQuery = "INSERT INTO $tableName ($fields) VALUES ($values);";
         $insertRtn = mysqli_query($this->connect(), $insertQuery);
 
@@ -76,6 +76,28 @@ class DAO extends DataBase{
             SET column1 = $values,
             WHERE $condition; 
         */
+
+        $tableCols = $this->getTableColumns($tableName);
+
+        $setStr = "";
+        for ($i = 0; $i < sizeof($tableCols); $i++){
+            if ($i == array_key_last($tableCols)){
+                $setStr .= $tableCols[$i] . " = " . "'" . $values[$i] . "'";
+            }else{
+                $setStr .= $tableCols[$i] . " = " . "'" . $values[$i] . "'" . ",";
+            }
+        }
+    
+        
+        $updateQuery = "UPDATE $tableName SET $setStr WHERE $condition;";
+
+        $updateRtn = mysqli_query($this->connect(), $updateQuery);
+
+        if($updateRtn){
+            return True;
+        }else{
+            return False;
+        }
     }
 
     public function delete($tableName, $condition){
@@ -83,7 +105,7 @@ class DAO extends DataBase{
         $deleteRtn = mysqli_query($conexao, $deleteQuery);
     }
 
-    private function getTableColumns($tableName){
+    private function getTableColumns($tableName, $adjustArray=NULL){
         $getTableColsQuery = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$tableName';";
         $getTableColsRtn = mysqli_query($this->connect(), $getTableColsQuery);
         
@@ -92,9 +114,12 @@ class DAO extends DataBase{
         while ($row = $getTableColsRtn->fetch_assoc()) {
             $tableCols[$iterator] = $row["COLUMN_NAME"];        
             $iterator++;
+        }        
+
+        if ($adjustArray){
+            $tableCols = $this->adjustArraySQLSyntax($tableCols);
         }
-        
-        $tableCols = $this->adjustArraySQLSyntax($tableCols);
+
         
         return $tableCols;
     }

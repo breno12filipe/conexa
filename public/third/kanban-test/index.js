@@ -65,7 +65,11 @@ $(function() {
             .addClass("dx-card")
             .addClass("dx-theme-text-color")
             .addClass("dx-theme-background-color")
-            .appendTo($container);
+            .appendTo($container)
+            .attr("card-id", task.Task_ID)
+            .attr("onclick", "showTaskDetails($(this).attr('card-id'))")
+            .attr("data-toggle", "modal")
+            .attr("data-target", "#list-card");
 
         var employee = employees.filter(function(employee) { return employee.ID === task.Task_Assigned_Employee_ID })[0];
 

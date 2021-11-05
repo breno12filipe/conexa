@@ -22,6 +22,37 @@ switch ($operation) {
         $currentUser->authenticate($email, $password);
         break;
 
+    case 'getUserByID':
+        include_once('user.php');
+        $userId = $reqBody->userID;
+        $user = new User();
+        $selectedUser = $user->getUserById($userId);
+        echo $selectedUser;
+        break;
+
+    case 'listAllUsers':
+        include_once('user.php');
+        $allUsers = new User();
+        $users = $allUsers->listAllUsers();
+        echo $users;
+        break;
+
+    case 'updateTask':
+        include_once('task.php');
+        $task = new Task();
+
+        $task_id = $reqBody->id;
+        $task_subject = $reqBody->subject;
+        $task_start_date = $reqBody->start_date;
+        $task_due_date = $reqBody->due_date;
+        $task_priority = $reqBody->priority;
+        $task_status = $reqBody->status;
+        $task_selected_user = $reqBody->selected_user;
+
+        $updatedTask = $task->updateTask($task_id, $task_subject, $task_start_date, $task_due_date, $task_priority, $task_status, $task_selected_user);
+        echo $updatedTask;
+        break;
+
     case 'addTask':
         include_once('task.php');
         $subject = $reqBody->subject;
@@ -39,6 +70,14 @@ switch ($operation) {
         $allTasks = new Task();
         $tasks = $allTasks->listAllTasks();
         echo $tasks;
+        break;
+
+    case 'getTaskById':
+        include_once('task.php');
+        $taskId = $reqBody->taskID;
+        $task = new Task();
+        $selectedTask = $task->getTaskById($taskId);
+        echo $selectedTask;
         break;
 
     case 'addAppointment':

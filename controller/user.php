@@ -58,7 +58,7 @@ class User{
         $DAObj = new DAO();
 
         $selectOccurrences = $DAObj->select(['ID', 'UserEmail'], 'login');
-        return $selectOccurrences;
+        return json_encode($selectOccurrences);
     }
 
     // login user (NOT TESTED)
@@ -86,6 +86,12 @@ class User{
     public function logout(){
         session_start();
         session_destroy();
+    }
+
+    public function getUserById($userID){
+        $DAObj = new DAO();
+        $selectOccurrences = $DAObj->select('UserEmail', 'login', "ID='$userID'");
+        return json_encode($selectOccurrences);
     }
 
 }

@@ -38,6 +38,8 @@
     <script src="../public/our/js/kanban/data.js"></script>
     <script src="../public/third/kanban-test/index.js"></script>
     <script src="../public/our/js/addTask.js"></script>
+    <script src="../public/our/js/detailTask.js"></script>
+    <script src="../public/our/js/updateTask.js"></script>
     <script src="../public/third/dropzone/dist/dropzone.js"></script>
     <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
     <script src='../public/third/fullcalendar/lib/main.js'></script>
@@ -222,6 +224,16 @@
                             <div class="modal-content" id="add-card-content"></div>
                         </div>
                     </div>
+
+                    <div class="modal fade" id="list-card">
+                        <div class="modal-dialog">
+                            <div class="modal-content" id="list-card-content"></div>
+                        </div>
+                    </div>
+
+
+                    
+
             
                     
                     <div id="kanban"></div>

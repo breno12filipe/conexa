@@ -13,10 +13,10 @@ addCardTpl = `
                 <input type="text" id="subject" class="form-control" name="task-subject" type="text" maxlength="23"><br>
 
                 <label for="start-date">Data de início</label><br>
-                <input id="start-date-datepicker" name="task-start-date" type="text"><br><br>
+                <input class="form-control" id="start-date-datepicker" name="task-start-date" type="text"><br><br>
 
                 <label for="due-date">Data de término</label><br>
-                <input id="due-date-datepicker" name="task-due-date" type="text"><br><br>
+                <input class="form-control" id="due-date-datepicker" name="task-due-date" type="text"><br><br>
 
                 <div class="form-group">
                     <label for="priority">Prioridade</label>
@@ -73,7 +73,7 @@ function loadModalContent(){
         buildUserSelect(users)
     })
 
-
+ 
     $("#start-date-datepicker").datepicker();
     $("#due-date-datepicker").datepicker();
 
