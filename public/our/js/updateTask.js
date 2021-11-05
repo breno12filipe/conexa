@@ -17,8 +17,8 @@ function editTask(form, cardID){
         contentType: 'application/json',
         async: false,
         data: JSON.stringify({
-            id : cardID,
             operation: 'updateTask',
+            id : cardID,
             subject: form[0].value,
             start_date : form[1].value,
             due_date : form[2].value,

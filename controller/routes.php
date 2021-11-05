@@ -37,6 +37,18 @@ switch ($operation) {
         echo $users;
         break;
 
+    case 'addTask':
+        include_once('task.php');
+        $subject = $reqBody->subject;
+        $startDate = $reqBody->startDate;
+        $dueDate = $reqBody->dueDate;
+        $priority = $reqBody->priority;
+        $status = $reqBody->status;
+        $assignedEmployeeID = $reqBody->assignedEmployeeId;
+        $currentTask = new Task();
+        $currentTask->createTask($subject, $startDate, $dueDate, $priority, $status, $assignedEmployeeID);
+        break;
+
     case 'updateTask':
         include_once('task.php');
         $task = new Task();
@@ -53,16 +65,11 @@ switch ($operation) {
         echo $updatedTask;
         break;
 
-    case 'addTask':
+    case 'deleteTask':
         include_once('task.php');
-        $subject = $reqBody->subject;
-        $startDate = $reqBody->startDate;
-        $dueDate = $reqBody->dueDate;
-        $priority = $reqBody->priority;
-        $status = $reqBody->status;
-        $assignedEmployeeID = $reqBody->assignedEmployeeId;
-        $currentTask = new Task();
-        $currentTask->createTask($subject, $startDate, $dueDate, $priority, $status, $assignedEmployeeID);
+        $task = new Task();
+        $task_id = $reqBody->taskID;
+        $deletedTask = $task->deleteTask($task_id);
         break;
 
     case 'listAllTasks':

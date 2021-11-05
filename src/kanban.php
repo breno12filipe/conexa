@@ -39,6 +39,7 @@
     <script src="../public/third/kanban-test/index.js"></script>
     <script src="../public/our/js/addTask.js"></script>
     <script src="../public/our/js/detailTask.js"></script>
+    <script src="../public/our/js/deleteTask.js"></script>
     <script src="../public/our/js/updateTask.js"></script>
     <script src="../public/third/dropzone/dist/dropzone.js"></script>
     <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>

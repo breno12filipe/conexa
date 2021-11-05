@@ -106,6 +106,18 @@ class Task{
         $selectOccurrences = $DAObject->select('*', 'task', "Task_ID='$taskID'");
         return json_encode($selectOccurrences);
     }
+
+    public function deleteTask($taskID){
+        $DAObject = new DAO();
+        $deleteOperation = $DAObject->delete("task", "Task_ID = '$taskID'");
+
+        if ($deleteOperation){
+            echo "Card deletado com sucesso!";
+        }else{
+            echo "Não foi possível deletar o card";
+        }
+
+    }
 }
 
 

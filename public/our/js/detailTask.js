@@ -74,9 +74,20 @@ function showTaskDetails(cardID){
                 <center>
                     <button onclick="editTask(this.form, '${cardID}')" style="display:none;" id="save-settings" class="btn btn-success btn-lg">Salvar</button>
                 </center>
-                
             </form>
         </div>
+
+        <div class="row">
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col sm-10 float-right">
+                <div class="col sm-10 pull-right">
+                    <i class="fas fa-trash" style="color:red;" onclick="removeTask('${cardID}')"></i>
+                </div>
+			</div>
+		</div>
     </div> 
     `
 

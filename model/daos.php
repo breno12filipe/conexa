@@ -78,7 +78,6 @@ class DAO extends DataBase{
         */
 
         $tableCols = $this->getTableColumns($tableName);
-
         $setStr = "";
         for ($i = 0; $i < sizeof($tableCols); $i++){
             if ($i == array_key_last($tableCols)){
@@ -87,10 +86,7 @@ class DAO extends DataBase{
                 $setStr .= $tableCols[$i] . " = " . "'" . $values[$i] . "'" . ",";
             }
         }
-    
-        
         $updateQuery = "UPDATE $tableName SET $setStr WHERE $condition;";
-
         $updateRtn = mysqli_query($this->connect(), $updateQuery);
 
         if($updateRtn){
@@ -102,7 +98,13 @@ class DAO extends DataBase{
 
     public function delete($tableName, $condition){
         $deleteQuery = "DELETE FROM $tableName WHERE $condition;";
-        $deleteRtn = mysqli_query($conexao, $deleteQuery);
+        $deleteRtn = mysqli_query($this->connect(), $deleteQuery);
+
+        if($deleteRtn){
+            return True;
+        }else{
+            return False;
+        }
     }
 
     private function getTableColumns($tableName, $adjustArray=NULL){
