@@ -22,7 +22,7 @@ function getAllAppointments(){
         data.forEach(function(item){
           delete item['Appointment_ID'];
           delete item['Appointment_Description'];
-          item['title'] = item['Title'].split("/").reverse().join("-");
+          item['title'] = item['Title'];
           item['end'] = item['Due_date'].split("/").reverse().join("-");
           item['start'] = item['Start_date'].split("/").reverse().join("-");
           delete item['Due_date'];
@@ -64,4 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     calendar.render();
-  });
+});

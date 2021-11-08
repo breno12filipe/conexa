@@ -25,7 +25,7 @@
     <!-- Custom styles for this template-->
     <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet' />
+    <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet'>
 
     <link  href='../public/our/css/calendar.css' rel='stylesheet' >
     <link rel="stylesheet" href="../public/third/jquery-ui-1.12.1.custom/jquery-ui.css">
@@ -74,14 +74,21 @@
                 </a>
             </li>
 
-            
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" id="navbar-agenda-icon">
-                <a class="nav-link" href="calendar.php">
-                    <i class="fas fa-fw fa-calendar-week"></i>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Agenda</span>
                 </a>
+
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="calendar.php">Ver calendário</a>
+                        <a class="collapse-item" href="listAppointments.php">Listar compromissos</a>
+                    </div>
+                </div>
             </li>
+
                 
             <hr class="sidebar-divider">
 
@@ -190,12 +197,21 @@
                 
                 <div class="row">
                     <div class="col-md-2">
-                        <a style="cursor: pointer;font-size:1rem;" onclick="loadAppontmentModal()" data-toggle="modal" data-target="#add-appointment" class="nav-link ">
-                            <i class="fas fa-plus"></i>
-                            Adicionar Compromisso
-                        </a>
+                        <ul>
+                            <td>
+                                <a style="cursor: pointer;font-size:1rem;" onclick="loadAppontmentModal()" data-toggle="modal" data-target="#add-appointment" class="nav-link ">
+                                    <i class="fas fa-plus"></i>
+                                    Adicionar Compromisso
+                                </a>
+                            </td>
+                            
+                        </ul>
                     </div>
-
+                    
+                    
+                    
+                    
+                    
                     <div class="col md-2">
                         <div style="margin-top: 0px; margin-left:20px" id='calendar'></div>
                     </div>

@@ -61,12 +61,19 @@
             </li>
 
             
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item" id="navbar-agenda-icon">
-                <a class="nav-link" href="calendar.php">
-                    <i class="fas fa-fw fa-calendar-week"></i>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Agenda</span>
                 </a>
+
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="calendar.php">Ver calendário</a>
+                        <a class="collapse-item" href="listAppointments.php">Listar compromissos</a>
+                    </div>
+                </div>
             </li>
                 
             <hr class="sidebar-divider">

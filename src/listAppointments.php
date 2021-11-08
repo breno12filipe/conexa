@@ -1,69 +1,46 @@
 <?php
     session_start();
     include('verifica_login.php');
-    //include('navBar.php');
-    //include('conexao.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="HeadMaster">
-
-    <title>Dashboard - Conexa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-   
+    <script src="../public/third/jquery/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+    <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+    <script href="../public/third/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../public/our/js/listAppointments.js"></script>
+    <title>Listar Compromissos</title>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
 
-    <script src="../public/third/jquery/jquery-3.6.0.js"></script>
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.js"></script>
-    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-    <script src="https://cdn3.devexpress.com/jslib/21.1.5/js/dx.all.js"></script>
+
     <script src="../public/third/jquery-ui-1.12.1.custom/jquery-ui.js" ></script>
-    <script src="../public/our/js/kanban/data.js"></script>
-    <script src="../public/third/kanban-test/index.js"></script>
-    <script src="../public/our/js/addTask.js"></script>
-    <script src="../public/our/js/detailTask.js"></script>
-    <script src="../public/our/js/deleteTask.js"></script>
-    <script src="../public/our/js/updateTask.js"></script>
-    <script src="../public/third/dropzone/dist/dropzone.js"></script>
-    <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
-    <script src='../public/third/fullcalendar/lib/main.js'></script>
+    <link rel="stylesheet" href="../public/third/jquery-ui-1.12.1.custom/jquery-ui.css">
 
         <!-- Custom fonts for this template-->
-    <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet' />
 
-    <link rel="stylesheet" href="../public/third/bootstrap-4.1.3/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.5/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.5/css/dx.light.css" />
-    <link rel="stylesheet" href="../public/third/jquery-ui-1.12.1.custom/jquery-ui.css">
-    <link rel="stylesheet" href="../public/third/kanban-test/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/third/dropzone/dist/dropzone.css">
-
+    
 </head>
-
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -213,34 +190,24 @@
                 
                 <!-- Main content-->
                 
-                <div class="demo-container" style="width: 100%">
-                    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-            
-                                <a style="cursor: pointer;" id="add-card-event" onclick="loadModalContent()" 
-                                   class="nav-link" data-toggle="modal" data-target="#add-card">
-                                    <i class="fas fa-plus"></i>
-                                    Adicionar Task
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-            
-                    <div class="modal fade" id="add-card">
-                        <div class="modal-dialog">
-                            <div class="modal-content" id="add-card-content"></div>
-                        </div>
-                    </div>
+                <table id="list-appointments-table">
+                    <thead>
+                        <td>Título</td>
+                        <td>Data de inicio</td>
+                        <td>Data de termino</td>
+                        <td>Operações</td>
+                    </thead>
 
-                    <div class="modal fade" id="list-card">
-                        <div class="modal-dialog">
-                            <div class="modal-content" id="list-card-content"></div>
-                        </div>
+                    <tbody></tbody>
+                </table>
+
+
+                <div class="modal fade" id="detail-appointment">
+                    <div class="modal-dialog">
+                        <div class="modal-content" id="detail-appointment-content"></div>
                     </div>
-                    
-                    <div id="kanban"></div>
-                    <div id="add-card"></div>
+                </div>
+
             
             
                 <!-- 
@@ -289,5 +256,4 @@
 
 
 </body>
-
 </html>

@@ -103,6 +103,29 @@ switch ($operation) {
         $appointments = $allAppointments->listAllAppointments();
         echo $appointments;
         break;
+
+    case 'deleteAppointment':
+        include_once('appointment.php');
+        $newAppointment = new Appointment();
+        $appointmentID = $reqBody->appointment_id;
+        $deletedAppointment = $newAppointment->deleteAppointment($appointmentID);
+        break;
+
+    case 'updateAppointment':
+        include_once('appointment.php');
+        $newAppointment = new Appointment();
+        $appointmentID = $reqBody->appointment_id;
+        $appointmentTitle = $reqBody->appointment_title;
+        $appointmentDescription = $reqBody->appointment_description;
+        $appointmentStartDate = $reqBody->appointment_start_date;
+        $appointmentDueDate = $reqBody->appointment_due_date;
+
+        $updatedAppointment = $newAppointment->updateAppointment($appointmentID, $appointmentTitle, $appointmentDescription, $appointmentStartDate, $appointmentDueDate);
+
+
+
+
+        break;
     
     default:
         echo "Oops, something went wrong..."; 

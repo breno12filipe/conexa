@@ -25,6 +25,37 @@ class Appointment{
         return json_encode($selectOccurrences);
     }
 
+    public function deleteAppointment($appointmentID){
+        $DAObj = new DAO();
+        $deleteAppointment = $DAObj->delete('appointment', "Appointment_ID = '$appointmentID'");
+        if($deleteAppointment){
+            echo "Compromisso deletado com sucesso!";
+        }else{
+            echo "Erro, não foi possível deletar o compromisso";
+        }
+    }
+
+    public function updateAppointment($appointmentID, $appointmentTitle, $appointmentDescription, $appointmentStartDate, $appointmentDueDate){
+        $DAObj = new DAO();
+        $updatedAppointment = $DAObj->update('appointment', 
+                                            [
+                                                $appointmentID,
+                                                $appointmentTitle,
+                                                $appointmentDescription,
+                                                $appointmentStartDate,
+                                                $appointmentDueDate
+                                            ],
+                                            "Appointment_ID = '$appointmentID'");
+
+        if ($updatedAppointment){
+            echo "Compromisso atualizado com sucesso!";
+        }else{
+            echo "Erro, compromisso não atualizado";
+        }
+
+
+    }
+
 
 }
 

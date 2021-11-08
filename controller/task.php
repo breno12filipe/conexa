@@ -109,6 +109,7 @@ class Task{
 
     public function deleteTask($taskID){
         $DAObject = new DAO();
+        echo $taskID;
         $deleteOperation = $DAObject->delete("task", "Task_ID = '$taskID'");
 
         if ($deleteOperation){
