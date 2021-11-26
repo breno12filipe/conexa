@@ -4,7 +4,7 @@ $( document ).ready(function() {
     $("#navbar-agenda-icon").removeClass("active");   
 })
 
-// Seria uma boa ideia adicionar também um select para o status
+
 addCardTpl = `
     <div class="card" style="width: 400px;margin-left:45px;">
         <div class="card-body">

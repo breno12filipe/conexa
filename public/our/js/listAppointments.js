@@ -176,9 +176,9 @@ function renderListAppointments(){
                     .append(`<td>${listItem["start"]}</td>`)
                         .append(`<td>${listItem["end"]}</td>`)
                             .append(`<td>
-                                        <button data-toggle="modal" data-target="#detail-appointment" class="btn btn-warning" onclick="editAppointment('${item}')">Editar</button>
+                                        <button data-toggle="modal" data-target="#detail-appointment" class="btn btn-warning" onclick="editAppointment('${item}')"><i class="fas fa-edit"></i></button>
                                         &nbsp;
-                                        <button class="btn btn-danger" onclick="deleteAppointment('${item[0]}')">Excluir</button>
+                                        <button class="btn btn-danger" onclick="deleteAppointment('${item[0]}')"><i class="fas fa-trash"></i></button>
                                     </td>`);
     })
 

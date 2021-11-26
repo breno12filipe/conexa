@@ -16,7 +16,7 @@
     */
     class DataBase{
 
-        protected function connect(){            
+        protected function connect(){
             $conn = mysqli_connect('localhost','root','root','conexa')or die("Couldn't connect");
             return $conn;
         }

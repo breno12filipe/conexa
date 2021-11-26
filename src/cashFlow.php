@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include('verifica_login.php');
+    //include('navBar.php');
+    //include('conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +18,9 @@
 
     <title>Dashboard - Conexa</title>
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+
     <!-- Custom fonts for this template-->
     <link href="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -21,6 +31,12 @@
     <link href='../public/third/fullcalendar/lib/main.css' rel='stylesheet' />
     <script src='https://github.com/mozilla-comm/ical.js/releases/download/v1.4.0/ical.js'></script>
     <script src='../public/third/fullcalendar/lib/main.js'></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <script src="../public/our/js/cashFlow.js"></script>
 
 </head>
 
@@ -172,6 +188,7 @@
                         </li>
 
                     </ul>
+                    
 
                 </nav>
                 <!-- End of Topbar -->
@@ -179,6 +196,37 @@
                 <!-- Begin Page Content -->
                 
                 <!-- Main content-->
+    
+                <div class="row d-flex justify-content-center">
+                    <h3 style="font-weight: bold;">Fluxo de Caixa Mensal</h3>
+                </div>
+                
+                <a style="cursor:pointer;" onclick="loadCashFlowModalContent()" data-toggle="modal" data-target="#add-record"><i class="fas fa-plus"></i>Registrar item</a>
+                <div class="row">&nbsp</div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="cashFlowTable">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Valor</td>
+                                    <td>Data de cadastro</td>
+                                    <td>Operações</td>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="add-record">
+                    <div class="modal-dialog">
+                        <div class="modal-content" id="add-record-content"></div>
+                    </div>
+                </div>
+
+
                 
 
             </div>
@@ -217,8 +265,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->

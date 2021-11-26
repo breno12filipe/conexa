@@ -65,6 +65,12 @@
                 </a>
             </li>
 
+            <li class="nav-item" id="navbar-dashboard-icon">
+                <a class="nav-link" href="cashFlow.php">
+                    <i class="fas fa-cash-register"></i>
+                    <span>Fluxo de caixa</span>
+                </a>
+            </li>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item" id="navbar-kanban-icon">
