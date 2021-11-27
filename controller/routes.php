@@ -121,10 +121,44 @@ switch ($operation) {
         $appointmentDueDate = $reqBody->appointment_due_date;
 
         $updatedAppointment = $newAppointment->updateAppointment($appointmentID, $appointmentTitle, $appointmentDescription, $appointmentStartDate, $appointmentDueDate);
+        break;
 
+    case 'addRecord':
+        include_once('record.php');
+        $newRecord = new Record();
+        $recordName = $reqBody->name;
+        $recordDescription = $reqBody->description;
+        $recordValue = $reqBody->value;
+        $recordDate = $reqBody->date;
 
+        $newRecord->createRecord($recordName, $recordDescription, $recordValue, $recordDate);
+        break;
+    
+    case 'listAllRecords':
+        include_once('record.php');
+        $allRecords = new Record();
+        $records = $allRecords->listAllRecords();
+        echo $records;
+        break;
 
+    case 'deleteRecord':
+        include_once('record.php');
+        $newRecord = new Record();
+        $recordID = $reqBody->record_id;
+        $deletedRecord = $newRecord->deleteRecord($recordID);
+        break;
 
+    case 'updateRecord':
+        include_once('record.php');
+        $newRecord = new Record();
+        
+        $recordId = $reqBody->id;
+        $recordName = $reqBody->name;
+        $recordDescription = $reqBody->description;
+        $recordValue = $reqBody->value;
+        $recordDate = $reqBody->date;
+
+        $updatedRecord = $newRecord->updateRecord($recordId, $recordName, $recordDescription, $recordValue, $recordDate);
         break;
     
     default:

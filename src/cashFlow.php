@@ -226,8 +226,8 @@
                     </div>
                 </div>
 
-
-                
+                <div class="row">&nbsp;</div>
+                <div class="row" id="summation"></div>
 
             </div>
             <!-- End of Main Content -->
