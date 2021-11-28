@@ -46,7 +46,7 @@ CREATE TABLE cash_register(
 	Cash_Register_ID VARCHAR (45) NOT NULL,
     Cash_Register_Name VARCHAR(45),
     Cash_Register_Description VARCHAR(100),
-    Cash_Register_Value INT, 
+    Cash_Register_Value FLOAT, 
     Registration_Entry VARCHAR(45),
     UNIQUE (Cash_Register_ID)
 );

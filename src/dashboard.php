@@ -36,7 +36,11 @@
   
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
+    
     <script src="../public/our/js/cashFlow.js"></script>
+
+
+    
 
 </head>
 
@@ -195,9 +199,67 @@
 
                 <!-- Begin Page Content -->
                 
+                <div class="row mx-auto">
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Ganhos Mensais</div>
+                                        <div id="summation" class="h5 mb-0 font-weight-bold text-gray-800">R$</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Número de Tasks
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div id="task-count" class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div id="task-count-progress-bar" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Ganhos</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-bar">
+                            <canvas id="myBarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
                 <!-- Main content-->
     
-                <p>Teste</p>
 
                 
 
@@ -252,6 +314,12 @@
     <!-- Page level custom scripts -->
     <!-- <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script> -->
+
+    <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script>
+    <!-- <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-bar-demo.js"></script> -->
+    <script src="../public/our/js/dashboard.js"></script>
+
+    
 
 </body>
 

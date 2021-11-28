@@ -226,8 +226,6 @@
                     </div>
                 </div>
 
-                <div class="row">&nbsp;</div>
-                <div class="row" id="summation"></div>
 
             </div>
             <!-- End of Main Content -->
@@ -265,8 +263,8 @@
         </div>
     </div>
 
-    
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/third/jquery.maskMoney.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../public/third/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>

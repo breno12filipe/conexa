@@ -22,7 +22,7 @@ addRecordTpl = `
                 <textarea class="form-control" name="description" style="resize:none"></textarea><br>
 
                 <label for="value">Valor</label><br>
-                <input class="form-control" type="text"><br>
+                <input id="brmoney" class="form-control" type="text"><br>
 
                 <center>
                     <button onclick="addRecord(this.form)" id="add-task-btn" class="btn btn-success btn-lg">Salvar</button>
@@ -36,6 +36,7 @@ addRecordTpl = `
 function loadCashFlowModalContent(){
     $("#add-record-content").empty();
     $("#add-record-content").append(addRecordTpl);
+    $("#brmoney").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
 }
 
 function getCurrentDate(){
@@ -57,7 +58,7 @@ function addRecord(form){
             operation: 'addRecord',
             name: form[0].value,
             description: form[1].value,
-            value: form[2].value,
+            value: form[2].value.toString().replace(",", "."),
             date: getCurrentDate()
         }),
         success: function(data){
@@ -95,7 +96,7 @@ function showSummation(){
         summation = summation + parseFloat(recordItem['Cash_Register_Value'])
     })
     
-    $('#summation').append(`<i><b><h3 style="margin-left: 10px">Somatório: ${summation}</h3></b></i>`)
+    $('#summation').append(`${summation}`)
 
 }
 
